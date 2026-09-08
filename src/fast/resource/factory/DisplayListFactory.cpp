@@ -496,7 +496,7 @@ ResourceFactoryXMLDisplayListV0::ReadResource(std::shared_ptr<Ship::File> file,
             } else {
                 char* str = (char*)malloc(fName.size() + 1);
                 dl->Strings.push_back(str);
-                strncpy((char*)str, fName.data(), fName.size() + 1);
+                snprintf(str, fName.size() + 1, "%s", fName.data());
 
                 g = GsSpVertexOtR2P1(str);
 
